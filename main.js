@@ -1,6 +1,11 @@
 
 const control = document.querySelectorAll("[data-controle]");
 const statistics = document.querySelectorAll("[data-statistic]");
+const menuSound = document.querySelector("#menu_sound");
+const buildSound = document.querySelector("#production_sound");
+
+const colorButtomNext = document.querySelector(`[data-change="next"]`)
+const colorButtomPrevious = document.querySelector(`[data-change="previous"]`)
 
 const parts = {
     "arms": {
@@ -36,10 +41,15 @@ const parts = {
     }
 }
 
+const robots = document.querySelectorAll("[data-color]");
+
+let i = 0;
+
 control.forEach( (element) => {
     element.addEventListener("click", (event) => {
         changeData(event.target.dataset.controle, event.target.parentNode);
         updateStatistics(event.target.dataset.part);
+        menuSound.play();
     })
 })
 
@@ -58,4 +68,43 @@ function updateStatistics(part) {
     statistics.forEach( (element) => {
         element.textContent = parseInt(element.textContent) + parts[part][element.dataset.statistic];
     })
+}
+
+function playProductionSound() {
+    const productionButtom = document.querySelector("#producao");
+    productionButtom.addEventListener("click", () => {
+        buildSound.play();
+        console.log(productionButtom);
+    })
+}
+
+colorButtomNext.addEventListener("click", () => {
+    changeColorNext();
+    console.log(i);
+})
+
+colorButtomPrevious.addEventListener("click", () => {
+    changeColorPrevious();
+    console.log(i);
+})
+
+
+function changeColorNext() {
+    if (i < 5){
+        robots[(i+1)].setAttribute("data-view", "top");
+        robots[i].removeAttribute("data-view", "top");
+        if (i < 5){
+            i++;
+        }
+    }
+}
+
+function changeColorPrevious() {
+    if (i > 0){
+        robots[(i-1)].setAttribute("data-view", "top");
+        robots[i].removeAttribute("data-view", "top");
+        if (i > 0){
+            i--;
+        }
+    }
 }

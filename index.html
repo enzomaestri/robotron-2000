@@ -15,31 +15,37 @@
 <body>
     <main>
         <section class="robotron">
-            <img class="robo" src="img/robotron.png" alt="Robotron" id="robotron">
+            <img class="robo" src="img/robotron_black.png" alt="Robotron" id="robotron" data-color="black" data-view="top">
+            <img class="robo" src="img/robotron_pink.png" alt="Robotron" id="robotron" data-color="pink">
+            <img class="robo" src="img/robotron_red.png" alt="Robotron" id="robotron" data-color="red">
+            <img class="robo" src="img/robotron_white.png" alt="Robotron" id="robotron" data-color="white">
+            <img class="robo" src="img/robotron_yellow.png" alt="Robotron" id="robotron" data-color="yellow">
+            <img class="robo" src="img/robotron.png" alt="Robotron" id="robotron" data-color="blue">
             <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
         </section>
-
+        <buttom class="change-color" data-change="previous"><</buttom>
+        <buttom class="change-color" data-change="next">></buttom>
         <section class="box estatisticas">
             <div class="estatistica">
-                <p class="estatistica-titulo">Força</p>
+                <p class="estatistica-titulo">Strength</p>
                 <div class="estatistica-valor">
                     <p class="estatistica-numero" data-statistic="strength">0</p>
                 </div>
             </div>
             <div class="estatistica">
-                <p class="estatistica-titulo">Poder</p>
+                <p class="estatistica-titulo">Power</p>
                 <div class="estatistica-valor">
                     <p class="estatistica-numero" data-statistic="power">0</p>
                 </div>
             </div>
             <div class="estatistica">
-                <p class="estatistica-titulo">Energia</p>
+                <p class="estatistica-titulo">Energy</p>
                 <div class="estatistica-valor">
                     <p class="estatistica-numero" data-statistic="energy">0</p>
                 </div>
             </div>
             <div class="estatistica">
-                <p class="estatistica-titulo">Velocidade</p>
+                <p class="estatistica-titulo">Speed</p>
                 <div class="estatistica-valor">
                     <p class="estatistica-numero" data-statistic="speed">0</p>
                 </div>
@@ -50,7 +56,7 @@
             <form action="" class="montador">
                 <div class="box montador-conteudo">
                     <div class="peca">
-                        <label for="" class="peca-titulo">Braços</label>
+                        <label for="" class="peca-titulo">Arms</label>
                         <div class="controle">
                             <buttom class="controle-ajuste" data-controle="-" data-part="arms">-</buttom>
                             <input type="text" class="controle-contador" value="00" data-contador>
@@ -59,7 +65,7 @@
                     </div>
                     <hr class="linha">
                     <div class="peca">
-                        <label for="" class="peca-titulo">Blindagem</label>
+                        <label for="" class="peca-titulo">Armor</label>
                         <div class="controle">
                             <buttom class="controle-ajuste" data-controle="-" data-part="armor">-</buttom>
                             <input type="text" class="controle-contador" value="00" data-contador>
@@ -68,7 +74,7 @@
                     </div>
                     <hr class="linha">
                     <div class="peca">
-                        <label for="" class="peca-titulo">Núcleos</label>
+                        <label for="" class="peca-titulo">Cores</label>
                         <div class="controle">
                             <buttom class="controle-ajuste" data-controle="-" data-part="cores">-</buttom>
                             <input type="text" class="controle-contador" value="00" data-contador>
@@ -77,7 +83,7 @@
                     </div>
                     <hr class="linha">
                     <div class="peca">
-                        <label for="" class="peca-titulo">Pernas</label>
+                        <label for="" class="peca-titulo">Legs</label>
                         <div class="controle">
                             <buttom class="controle-ajuste" data-controle="-" data-part="legs">-</buttom>
                             <input type="text" class="controle-contador" value="00" data-contador>
@@ -86,7 +92,7 @@
                     </div>
                     <hr class="linha">
                     <div class="peca">
-                        <label for="" class="peca-titulo">Foguetes</label>
+                        <label for="" class="peca-titulo">Rockets</label>
                         <div class="controle">
                             <buttom class="controle-ajuste" data-controle="-" data-part="rockets">-</buttom>
                             <input type="text" class="controle-contador" value="00" data-contador>
@@ -94,10 +100,14 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" value="Iniciar produção" class="producao" id="producao">
+                <input type="submit" value="Iniciar produção" class="producao" id="producao" data-build>
             </form>
         </section>
     </main>
+
+    <audio src="./sounds/robotron_menusfx.mp3" id="menu_sound"></audio>
+    <audio src="./sounds/robotron_production.wav" id="production_sound"></audio>
+
     <script src="main.js"></script>
 </body>
 </html>
